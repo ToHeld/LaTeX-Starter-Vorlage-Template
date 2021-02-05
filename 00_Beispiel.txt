@@ -1,0 +1,292 @@
+﻿%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kapitel 1 || Chapter 1
+
+\chapter{Beispieleinleitung}
+ca. 1-2 Seiten
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/Beispiel.PNG}
+\caption[Titel der Figure]{Beschreibungstext Bla bla bla viel beschreiben sehr gut}
+\label{fig:DieFigIhAuhhNooo}
+\end{figure}
+
+%% Alignment equations using &, with mulitple reference numbers
+\begin{align}
+    f(x) & = x^2 - 5x + 7 \label{eq.two} \\
+         & = 2x + 1 \label{eq.three}
+\end{align}
+\begin{scriptsize}
+	Mit\\
+	\begin{tabular}{ll}
+		\(p\) & Druck in \(\) \\
+		\(F\) & Kraft in \(\) \\
+		\(A\) & Fläche in \(\) \\
+		\(D\) & Durchmesser in \(\) 
+	\end{tabular}\\
+\end{scriptsize}
+
+
+\begin{enumerate}
+ \item Fassen Sie die Bedeutung des Themas zusammen.
+ \item Beschreiben Sie den Stand der Technik.
+ \item Geben Sie die spezifische Frage / Hypothese an, die Sie beantworten /
+    erkunden. Das Ziel der Arbeit muss klar werden.
+\end{enumerate}
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.48\textwidth}
+	\centering
+	\includegraphics[height=5cm]{figures/Stand_der_Technik/Bemse_Rad.jpg}
+	\caption[Bremssystem Aufbau am Rad]{Das in dem Radträger(blau) eingelassene Getriebe wird von dem Motor(oben links, grau) betrieben und bringt die Radnabe(weiß) zum rotieren. Darauf liegt die Bremsscheibe(grau) die von dem Bremssattel(rot) umschlossen wird. Dieser ist fest an dem Radträger montiert. }
+	\label{fig:Radtraeger}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+	\centering
+	\includegraphics[height=5cm]{figures/Stand_der_Technik/Bremspedal_iso1.jpg}
+	\caption[Bremspedal]{Das Bremspedal des G19e ist auf einer Schiene zur Positionsverstellung montiert und besteht aus Hebel/Pedal(pink), zwei Hauptbremszylinder(schwarz), zwei Bremsflüssigkeitsreservoirs(beige) und einer Balancebar zum einstellen der statischen Bremsdruckverteilung(gelb).}
+	\label{fig:Bremspedal}
+\end{minipage}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kapitel 2
+
+\chapter{Material und Methoden}  %% Remove and Materials if it doesn't apply.
+ca. 1-3 Seiten
+
+Dieser Abschnitt liefert die erforderlichen Informationen für die
+Reproduzierbarkeit der Arbeit. Das kann verwendete Materialien und Software
+einschließen. \\
+
+\section{Zitate und Zitieren}
+%% Indirect and short direct quotations.
+%% For quoting short statements or sentences -- use  \glqq und \grqq
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit \cite[SS. 35-40]{Becker2008}.
+Donec venenatis ultrices convallis \cite{Jones2013, MilaniSRCL2009}.
+\glqq Integer sagittis vel purus nec molestie\grqq{} \cite{Jones2013b}. Nullam dictum
+fermentum egestas. Sed erat sapien, eleifend ut accumsan non, rutrum vel sem.
+Aenean dignissim velit quis consequat faucibus \cite{OConnorH2009}. Etiam aliquet
+non tellus vitae tristique. Integer euismod volutpat sem at commodo (see
+\cite{Smith2016}). Pellentesque rhoncus nibh non mauris scelerisque, a
+fringilla arcu sodales. Curabitur vel libero nec massa lacinia varius
+\cite[Kapital ~2]{R-base}. Morbi non facilisis nisi. Lorem ipsum dolor sit amet,
+consectetur adipiscing elit \cite{sublime}.
+
+Quisque nisl est [\textit{sic}], rutrum nec eros facilisis, malesuada scelerisque diam.
+Quisque dictum suscipit aliquet. Ut faucibus faucibus erat tristique porta. Aenean
+dictum semper nulla, sit amet facilisis orci venenatis. At vero eos et accusam et
+justo duo dolores in:
+
+%% For direct quotation with multiple sentences - use the quote environment
+\begin{quote}
+Lorem ipsum dolor sit amet [writing is fun], consetetur sadipscing elitr ... sed
+diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
+diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+\cite[S. 23]{Smith2016}
+\end{quote}
+
+\noindent
+Citing an article written by one author \cite{Giddings2008}. \\
+Citing an article written by two authors \cite{OConnorH2009}. \\
+Citing an article written by three or more authors \cite{BlischakDW2016}. \\
+Citing multiple articles for one topic \cite{Giddings2008, OConnorH2009, BlischakDW2016} \\
+Citing a book \cite{Becker2008}. \\
+Citing an article from a conference proceedings \cite{MilaniSRCL2009}. \\
+Citing a chapter within a book \cite{EasterbrookSSD2008}. \\
+Citing a master thesis \cite{Smith2016}. \\
+Citing a program that has no formal citation, but a webpage \cite{sublime} \\
+Citing a webpage \cite{Wikipedia-OganizationalEthics2017}. \\
+Citing a personal communication \cite{Jones2013}.
+
+\section{Unterkapitel -- Gleichungen und Listen}
+\subsection{Unterunterkapitel -- Gleichungen}
+
+%% Equations using inline mode - not numbered
+Mathematische Gleichungen können innerhalb eines Satzes geschrieben werden,
+und ohne entsprechende Referenznummer: $E=mc^2$. Oder Gleichungen können in
+einem Anzeigemodus (Gleichungen \ref{eq.one}--\ref{eq.matrix}) mit entsprechender
+Referenznummer angegeben werden
+(z.B. Gleichung \ref{eq.one}). Die Gleichungen können komplexer werden. Zum
+Beispiel können sie mehrere Zeilen (d.h. Split) und Ausrichtungen (dh das \&
+Zeichen) innerhalb des Latexcodes enthalten
+(z.B. Gleichungen \ref{eq.two}--\ref{eq.three} or \ref{eq.main}). \\
+
+%% Note that the equation label is completely up to you.
+\begin{equation}
+    3\times\frac{1}{2}=1\frac{1}{2}
+    \label{eq.one}
+\end{equation}
+
+%% Alignment equations using &, with mulitple reference numbers
+\begin{align}
+    f(x) & = x^2 - 5x + 7 \label{eq.two} \\
+         & = 2x + 1 \label{eq.three}
+\end{align}
+\begin{scriptsize}
+	Mit\\
+	\begin{tabular}{ll}
+		\(p\) & Druck in $Pa$ \\
+		\(F\) & Kraft in $N$ \\
+		\(A\) & Fläche in $m^2$ \\
+		\(D\) & Durchmesser in $m$ 
+	\end{tabular}\\
+\end{scriptsize}
+
+%% Use ``split'' to create multiple lines, align equantion on &, but only report one reference number
+\begin{equation}
+    \begin{split}
+        \Delta E^{CBS}_{e} = & \frac{2}{3} \left( E_{\text{Part1}} - \sum_{1}^{n}  E_{\text{Part2}}^{\frac{1}{2}} \right) + \\
+                             & \frac{1}{3} \left( E_{\text{Part3}} - \sum_{1}^{n}  E_{\text{Part4}}^{3} \right)
+    \end{split}
+    \label{eq.main}
+\end{equation}
+
+%% Matrix notation
+\begin{equation}
+    M=
+    \begin{bmatrix}
+      1 & 2 & 3 & 4 & 5 \\
+      3 & 4 & 5 & 6 & 7
+    \end{bmatrix}
+    \label{eq.matrix}
+\end{equation}
+
+\subsection{Unterunterkapitel / Subsubsection -- Listen / List of Items}
+
+Sie können eine numerische Liste wie die folgende verwenden: \\
+\begin{enumerate}
+ \item Erster Gegenstand
+ \item Zweiter Gegenstand
+\end{enumerate}
+
+\noindent Oder eine Aufzählungspunktliste, wie die folgende: \\ %% Notice the \noindent
+\begin{itemize}
+ \item Erster Gegenstand
+ \item Zweiter Gegenstand
+\end{itemize}
+
+\noindent Oder eine benutzerdefinierte Liste, wie die folgende: \\
+\begin{description}
+ \item[1$^{st}$:] Erster Gegenstand
+ \item[$\alpha$:] Zweiter Gegenstand
+\end{description}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kapitel 3
+
+\chapter{Ergebnisse}
+
+In diesem Abschnitt präsentieren wir Ihre Daten, Tabellen und Abbildungen.
+Vermeiden Sie es hier, Daten zu interpretieren; dazu dient das nächste Kapitel. \\
+
+\section{Unterkapitel -- Abbildungen}
+Bilder sind manchmal gut für die Darstellung komplexer Informationen (z.B.
+Abbildung \ref{fig:one}). \\
+
+\begin{figure}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[height=2cm]{fhlogo}
+    \caption[Kurzer Name für das Abbildungsverzeichnis]{Untertitel für diese Abbildung.}
+    \label{fig:one}
+\end{figure}
+
+Zwei Bilder können zu einer Abbildung kombiniert werden (z. B. Abbildung \ref{fig:two}). \\
+
+\begin{figure}[h!]
+    \centering
+    \captionsetup{justification=centering}
+    \subfloat[Subcaption 1]{\includegraphics[width=0.2\hsize]{fhlogo}}
+    \hspace*{0.1\hsize}
+    \subfloat[Subcaption 2]{\includegraphics[width=0.2\hsize]{firmenlogo}}
+    \caption{Untertitel für diese Abbildung.}
+    \label{fig:two}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kapitel 4 || Chapter 4
+
+\chapter{Diskussion}
+
+In diesem Abschnitt interpretieren Sie Ihre Daten, diskutieren die Implikationen
+und wie die neuen Erkenntnisse verwendet werden können. Ggf.\ können Sie hier
+auch ansprechen, was nicht funktioniert hat, oder spezifische
+Schwierigkeiten beschreiben und wie Sie diese überwunden haben. \\
+
+\section{Unterkapitel}
+
+Einfache Tabellen (z.B. Tabelle \ref{tab:example_1}) können in LaTeX mit der
+Tabellen-Umgebung und tabellarischen Befehlen erstellt werden. Die Einrückungen
+innerhalb des LaTeX-Codes selbst dienen nur der Übersichtlichkeit für Sie --
+sie wirken sich nicht auf das Ergebnis aus. \\
+
+%% Example of a simple table, without any special loaded libraries
+\begin{table}[h!]
+    \captionsetup{justification=centering}
+    \caption{Beschriftung steht über der Tabelle. \\ 
+    In der Regel ist es günstig, sehr lange Beschriftungen zu vermeiden. \\
+    And look at what you can do to a very long caption!}
+    \label{tab:example_1}
+    \centering
+    \begin{tabular}[c]{l | cc}
+	\toprule
+			& \textbf{Header $\alpha$} & \textbf{Header $\beta$}\\
+	\midrule
+	\textbf{Item 1} & 1.0               & 2.0\\
+	\textbf{Item 2} & 1.1               & 2.1\\
+	\textbf{Item 3} & 1.2               & 2.2\\
+	\textbf{Item 4} & 1.3               & 2.3\\
+	\bottomrule
+    \end{tabular}
+\end{table}
+
+\noindent Eine komplexere Tabelle kann auch gebildet werden (z. B.Tabelle \ref{tab:example_2}). \\
+
+%% Example of a more complex table, using threeparttable
+%% IMPORTANT NOTE: If you use threeparttable
+\begin{table}[!ht]
+    \centering
+    \begin{threeparttable}
+	\captionsetup{font=normalsize,labelfont=bf,labelsep=period}
+	\caption{Tabellenbeschriftung steht oberhalb der Tabelle.}
+	\label{tab:example2}
+	\normalsize
+    \label{tab:example_2}
+    \begin{tabular}[c]{l | cc || cc}
+	\toprule
+			& \multicolumn{2}{c ||}{\textbf{Main Header 1\tnote{a}}} & \multicolumn{2}{c}{\textbf{Main Header 2\tnote{a}}}\\
+			& \textbf{Subheader $\alpha$} & \textbf{Subheader $\beta$} & \textbf{Subheader $\gamma$} & \textbf{Subheader $\zeta$}\\
+	\midrule
+	\textbf{Item 1} & 1.0 & 2.0 & 3.0 & 4.0\\
+	\textbf{Item 2} & 1.1 & 2.1\\
+	& & & &\\
+			& \multicolumn{2}{c ||}{\textbf{Main Header 3}} & \multicolumn{2}{c}{\textbf{Main Header 4}}\\
+			& \textbf{Subheader $\alpha$} & \textbf{Subheader $\beta$} & \textbf{Subheader $\gamma$} & \textbf{Subheader $\zeta$}\\
+	\midrule
+	\textbf{Item 3} & 1.2 & 2.2 & 3.2 & 4.2\\
+	\textbf{Item 4} & 1.3 & 2.3\\
+	\bottomrule
+    \end{tabular}
+	\begin{tablenotes}
+	    %\footnotesize
+	    \item[a] Footnote one goes here.
+	    \item[b] Footnote two goes here.
+	\end{tablenotes}
+    \end{threeparttable}
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Kapitel 5 || Chapter 5
+
+\chapter{Zusammenfassung und Ausblick}
+ca. 1-3 Absatz \\
+
+In diesem Abschnitt sollen das Projekt mit der zugrunde liegende Hypothese bzw.\
+den Zielen sowie die Ergebnisse auf der Grundlage Ihrer Interpretation der Daten
+zusammengefasst werden. Sie sollten auch erwähnen, was die nächsten Schritte sein
+sollten, um das Projekt in Zukunft fortzusetzen. \\
