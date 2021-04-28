@@ -18,8 +18,10 @@
 \usepackage{placeins}%% Ergmöglich \FloatBarrier
 \usepackage[labelfont=bf]{caption}
 \captionsetup[table]{justification=raggedright,singlelinecheck=false}
-\usepackage{url}   
-%% For citing webpages
+
+%% citation
+\usepackage{url}  %% For citing webpages
+%\usepackage[style=ieee,backend=biber]{biblatex}	%% Meistgenutzter Zitierstil im Ingenieurswesen
 \usepackage{csquotes} %% \enquote{Text} \foreignquote{Sprache}{Text}
 \usepackage[backend=biber, %% Hilfsprogramm "biber" (statt "biblatex" oder "bibtex")
 style=numeric, %% Zitierstil (siehe Dokumentation)
@@ -27,7 +29,7 @@ sorting=none, %% none => choronoligisch
 natbib=true, %% Bereitstellen von natbib-kompatiblen Zitierkommandos
 hyperref=true, %% hyperref-Paket verwenden, um Links zu erstellen
 ]{biblatex}
-\addbibresource{Kapitel/x_literaturverzeichnis.bib}
+\addbibresource{kapitel/x_literaturverzeichnis.bib}
 \usepackage{acronym}
 \usepackage{tabularx}
 \usepackage{multirow}
@@ -43,40 +45,39 @@ hyperref=true, %% hyperref-Paket verwenden, um Links zu erstellen
 \lohead[]{\leftmark}	% bei odd page \lohead,\cohead und \rohead
 \cohead[]{}				% bei even page \lehead,\cehead und \rehead
 %\rohead[]{\rightmark} 	% bei zweiseitig \ihead, \chead \ohead
-\rohead[]{{\small FlexHyX - Projekt}}
+\rohead[]{{\small Super coole \LaTeX Vorlage}} 				%	HIER DEN HEADER AENDERN
 \automark[section]{chapter}
-%%%%%%%%%%%%%%%%% Hurenkind und Schusterjunge
+%%%%%%%%%%%%%%%%% Hurenkind und Schusterjunge -> https://bfy.tw/P79K
 \clubpenalty=10000
 \widowpenalty=10000 
 \displaywidowpenalty=10000
 %%%%%%%%%%%%%%%%%
 %\usepackage{blindtext}
 \author{Tobias Held}
-\title{Erstellung eines Simulationsmodells zur Ermittlung von Lastszenarien in 
-	der Binnenschifffahrt}
+%\title{Super Cooles Thesis/ Projekt Template/ Vorlage}
 
 
 
 \begin{document}
-	\input{Kapitel/x_titelseite.tex}
-	\input{Kapitel/x_erklaerung.tex}
+	\input{kapitel/x_titelseite.tex}
+	\input{kapitel/x_erklaerung.tex}
 	\pagenumbering{Roman}
 	\tableofcontents
 	\listoffigures		%% Abbildungsverzeichnis || List of Figures
 	\listoftables
-	\input{Kapitel/Acronym.tex}
+	\input{kapitel/Acronym.tex}
 	\newpage
 	\pagenumbering{arabic}
 	\pagestyle{scrheadings}
 	
-	\input{Kapitel/Einleitung.tex}
-	\input{Kapitel/Stand_der_Technik.tex}
-	\input{Kapitel/Methodisches_Vorgehen.tex}
-	%\input{Kapitel/Simulationsmodel.tex}
+	\input{kapitel/Einleitung.tex}
+	\input{kapitel/Stand_der_Technik.tex}
+	\input{kapitel/Methodisches_Vorgehen.tex}
+	\input{kapitel/Durchfuehrung.tex}
 	
-	\input{Kapitel/Ergebnisse.tex}
-	\input{Kapitel/Diskussion.tex}
-	\input{Kapitel/Fazit.tex}
+	\input{kapitel/Ergebnisse.tex}
+	\input{kapitel/Diskussion.tex}
+	\input{kapitel/Fazit.tex}
 	
 	\printbibliography
 	\addcontentsline{toc}{chapter}{Literatur}
@@ -86,7 +87,7 @@ hyperref=true, %% hyperref-Paket verwenden, um Links zu erstellen
 	\addcontentsline{toc}{chapter}{Anhang}
 	\appendix
 	\pagenumbering{gobble}
-	\input{Kapitel/Anhang.tex}
+	\input{kapitel/Anhang.tex}
 	
 	
 \end{document}

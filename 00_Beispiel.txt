@@ -8,7 +8,7 @@ ca. 1-2 Seiten
 \centering
 \includegraphics[width=0.5\textwidth]{figures/Beispiel.PNG}
 \caption[Titel der Figure]{Beschreibungstext Bla bla bla viel beschreiben sehr gut}
-\label{fig:DieFigIhAuhhNooo}
+\label{fig:DieLableIhAuhhNooo}
 \end{figure}
 
 %% Alignment equations using &, with mulitple reference numbers
