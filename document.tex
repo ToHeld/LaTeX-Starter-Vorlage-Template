@@ -53,10 +53,20 @@ hyperref=true, %% hyperref-Paket verwenden, um Links zu erstellen
 \displaywidowpenalty=10000
 %%%%%%%%%%%%%%%%%
 %\usepackage{blindtext}
-\author{Tobias Held}
-%\title{Super Cooles Thesis/ Projekt Template/ Vorlage}
+\newcommand{\Author}{Merle Mustermensch}
+\newcommand{\studentNumber}{123456}
+\newcommand{\addressStreet}{Wunschaddresse 42}
+\newcommand{\addressZipCode}{1337 Stadt}
+\newcommand{\email}{Merle.Mustermensch@h-brs.de}
+\newcommand{\Title}{My new created Title in multiple lines but it takes some words}
+\newcommand{\Keywords}{H-BRS, Industrie 4.0, Energiewende, TanjaUltras}
+\newcommand{\ExaminerOne}{Prof. Dr. Super Professorin}
+\newcommand{\ExaminerTwo}{Prof. Dr. Mega Professor}
 
-
+\hypersetup{
+pdftitle={\Title}, %
+pdfauthor={\Author}, %
+pdfkeywords={\Keywords}}
 
 \begin{document}
 	\input{kapitel/x_titelseite.tex}
