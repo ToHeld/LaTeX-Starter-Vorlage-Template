@@ -11,6 +11,23 @@ ca. 1-2 Seiten
 \label{fig:DieLableIhAuhhNooo}
 \end{figure}
 
+
+\begin{figure}[htbp]
+\begin{minipage}[t]{0.49\textwidth}
+	\centering
+	\includegraphics[height=5cm]{figures/Stand_der_Technik/Bemse_Rad.jpg}
+	\caption[Bremssystem Aufbau am Rad]{Das in dem Radträger(blau) eingelassene Getriebe wird von dem Motor(oben links, grau) betrieben und bringt die Radnabe(weiß) zum rotieren. Darauf liegt die Bremsscheibe(grau) die von dem Bremssattel(rot) umschlossen wird. Dieser ist fest an dem Radträger montiert. }
+	\label{fig:Radtraeger}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\textwidth}
+	\centering
+	\includegraphics[height=5cm]{figures/Stand_der_Technik/Bremspedal_iso1.jpg}
+	\caption[Bremspedal]{Das Bremspedal des G19e ist auf einer Schiene zur Positionsverstellung montiert und besteht aus Hebel/Pedal(pink), zwei Hauptbremszylinder(schwarz), zwei Bremsflüssigkeitsreservoirs(beige) und einer Balancebar zum einstellen der statischen Bremsdruckverteilung(gelb).}
+	\label{fig:Bremspedal}
+\end{minipage}
+\end{figure}
+
+
 %% Alignment equations using &, with mulitple reference numbers
 \begin{align}
     f(x) & = x^2 - 5x + 7 \label{eq.two} \\
@@ -19,10 +36,10 @@ ca. 1-2 Seiten
 \begin{scriptsize}
 	Mit\\
 	\begin{tabular}{ll}
-		\(p\) & Druck in \(\) \\
-		\(F\) & Kraft in \(\) \\
-		\(A\) & Fläche in \(\) \\
-		\(D\) & Durchmesser in \(\) 
+		\(p\) & Druck in \SI{}{\pascal} \\
+		\(F\) & Kraft in \SI{}{\newton} \\
+		\(A\) & Fläche in \SI{}{\meter\square} \\
+		\(D\) & Durchmesser in \SI{}{\milli\meter} 
 	\end{tabular}\\
 \end{scriptsize}
 
@@ -34,20 +51,21 @@ ca. 1-2 Seiten
     erkunden. Das Ziel der Arbeit muss klar werden.
 \end{enumerate}
 
-\begin{figure}[htbp]
-\begin{minipage}[t]{0.48\textwidth}
+
+\begin{table}[hbtp]
 	\centering
-	\includegraphics[height=5cm]{figures/Stand_der_Technik/Bemse_Rad.jpg}
-	\caption[Bremssystem Aufbau am Rad]{Das in dem Radträger(blau) eingelassene Getriebe wird von dem Motor(oben links, grau) betrieben und bringt die Radnabe(weiß) zum rotieren. Darauf liegt die Bremsscheibe(grau) die von dem Bremssattel(rot) umschlossen wird. Dieser ist fest an dem Radträger montiert. }
-	\label{fig:Radtraeger}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.48\textwidth}
-	\centering
-	\includegraphics[height=5cm]{figures/Stand_der_Technik/Bremspedal_iso1.jpg}
-	\caption[Bremspedal]{Das Bremspedal des G19e ist auf einer Schiene zur Positionsverstellung montiert und besteht aus Hebel/Pedal(pink), zwei Hauptbremszylinder(schwarz), zwei Bremsflüssigkeitsreservoirs(beige) und einer Balancebar zum einstellen der statischen Bremsdruckverteilung(gelb).}
-	\label{fig:Bremspedal}
-\end{minipage}
-\end{figure}
+	\caption[Schöne Tabelle]{Diese Tabelle wirkt gleich viel aufgeräumter und ist durch die Vermeidung redundanter Information auch schneller verständlich.}
+	\label{tab:schoen}
+	\begin{tabular}{lccccccl}\hline
+	&& \multicolumn{3}{c}{\(\text{tol}= u_{\text{single}}\)} & \multicolumn{3}{c}{\(\text{tol}= u_{\text{double}}\)} 
+	\\\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+	&Test & $mv$  & Rel.~err & Time    & $mv$  & Rel.~err & Time\\\midrule
+	\texttt{trigmv}   &\multirow{2}{*}{Typ 1} & 11034 & 1.3e-7 & 3.9 & 15846 & 2.7e-11 & 5.6 \\
+	\texttt{trigexpmv}& & 21952 & 1.3e-7 & 6.2 & 31516 & 2.7e-11 & 8.8 \\
+	\texttt{trigblock}&\multirow{2}{*}{Typ 2} & 15883 & 5.2e-8 & 7.1 & 32023 & 1.1e-11 & 1.4e1\\
+	\texttt{expleja}  & & 11180 & 8.0e-9 & 4.3 & 17348 & 1.5e-11 & 6.6 \\\bottomrule
+	\end{tabular}
+\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

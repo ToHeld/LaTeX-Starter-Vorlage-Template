@@ -1,1 +1,33 @@
 \chapter{Methodisches Vorgehen}\label{ch:methodisches_vorgehen}
+Man kann Tabellen unterschiedlich schön gestalten. Ein Beispiel:
+% First version of table.
+\begin{table}[hbtp]
+	\centering
+	\caption[Unschöne Tabelle]{Diese Tabelle ist nicht schön. Sie hat vertikale Linien, die das Gesamtbild unruhig wirken lassen und enthält redundante Information.}
+	\label{tab:unschoen}
+	\begin{tabular}{|l|c|c|c|c|c|c|l|}\hline
+		&& \multicolumn{3}{c|}{\(\text{tol}= u_{\text{single}}\)} & \multicolumn{3}{c|}{\(\text{tol}= u_{\text{double}}\)}\\
+		&Test& $mv$  & Rel.~err & Time    & $mv$  & Rel.~err & Time   \\\hline
+		\texttt{trigmv}   & Typ 1 & 11034 & 1.3e-7 & 3.9 & 15846 & 2.7e-11 & 5.6 \\
+		\texttt{trigexpmv}& Typ 1  & 21952 & 1.3e-7 & 6.2 & 31516 & 2.7e-11 & 8.8 \\
+		\texttt{trigblock}& Typ 2  & 15883 & 5.2e-8 & 7.1 & 32023 & 1.1e-11 & 1.4e1\\
+		\texttt{expleja}  & Typ 2  & 11180 & 8.0e-9 & 4.3 & 17348 & 1.5e-11 & 6.6 \\\hline
+	\end{tabular}
+\end{table}
+
+
+% Second version of table, with booktabs.
+\begin{table}[hbtp]
+	\centering
+	\caption[Schöne Tabelle]{Diese Tabelle wirkt gleich viel aufgeräumter und ist durch die Vermeidung redundanter Information auch schneller verständlich.}
+	\label{tab:schoen}
+	\begin{tabular}{lccccccl}\hline
+	&& \multicolumn{3}{c}{\(\text{tol}= u_{\text{single}}\)} & \multicolumn{3}{c}{\(\text{tol}= u_{\text{double}}\)} 
+	\\\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+	&Test & $mv$  & Rel.~err & Time    & $mv$  & Rel.~err & Time\\\midrule
+	\texttt{trigmv}   &\multirow{2}{*}{Typ 1} & 11034 & 1.3e-7 & 3.9 & 15846 & 2.7e-11 & 5.6 \\
+	\texttt{trigexpmv}& & 21952 & 1.3e-7 & 6.2 & 31516 & 2.7e-11 & 8.8 \\
+	\texttt{trigblock}&\multirow{2}{*}{Typ 2} & 15883 & 5.2e-8 & 7.1 & 32023 & 1.1e-11 & 1.4e1\\
+	\texttt{expleja}  & & 11180 & 8.0e-9 & 4.3 & 17348 & 1.5e-11 & 6.6 \\\bottomrule
+	\end{tabular}
+\end{table}
