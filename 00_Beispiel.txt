@@ -28,6 +28,16 @@ ca. 1-2 Seiten
 \end{figure}
 
 
+\begin{figure}[htbp]
+    \centering
+    \subfloat[Subcaption 1]{\includegraphics[width=0.2\hsize]{fhlogo}}
+    \hspace*{0.1\hsize}
+    \subfloat[Subcaption 2]{\includegraphics[width=0.2\hsize]{firmenlogo}}
+    \caption[short title]{Untertitel für diese Abbildung.}
+    \label{fig:two}
+\end{figure}
+
+
 %% Alignment equations using &, with mulitple reference numbers
 \begin{align}
     f(x) & = x^2 - 5x + 7 \label{eq.two} \\
@@ -66,6 +76,71 @@ ca. 1-2 Seiten
 	\texttt{expleja}  & & 11180 & 8.0e-9 & 4.3 & 17348 & 1.5e-11 & 6.6 \\\bottomrule
 	\end{tabular}
 \end{table}
+
+%% More advantced Table
+\begin{table}[hbt]
+	\centering
+	\caption[Batteriealterung Gleichungen]{In dieser Tabelle sind alle notwendigen Gleichungen und Koeffizienten zur Modellierung der Alterungseffekte einer Lithium-Ionen-Eisen-Phosphat Batterie aufgeführt, entspricht \cite{Omar.2014}.}
+	\label{tab:bat_coef}
+\begin{tblr}{
+colspec = X[r]cccc
+}
+	
+	\toprule
+	\SetCell{c}{Effekt} & \SetCell[c=4]{c}{Koeffizienten} \\
+	\midrule
+	{Lebenszyklus vs. Betriebstemperatur} & a & b &c &d \\
+	\(CL = a\cdot T^3 + b\cdot T^2 + c\cdot T + d\) & 0,0039 & 1,95 & 67,51 & 2070\\
+	{Lebenszyklus vs. konstanter Entladestromrate} & e&f&g&h\\
+	\(CL(I_d) = e\cdot e^{f\cdot I_d} + g\cdot e^{h\cdot I_d}\) &4464&-0,1382&-1579&-0,4305\\
+	{Lebenszyklus vs. \ac{dod}} & i&j&k&l\\
+	\(CL(DoD) = i \cdot e^{j \cdot DoD} + k \cdot e^{l \cdot DoD}\)&6,009e9&-0,011879&6,009e9&-0,01879\\
+	{Lebenszyklus vs. konstanter Ladestromrate} &m&n&o&p\\
+	\(CL(I_{ch}) = m \cdot e^{n \cdot I_{ch}} + o \cdot e^{p \cdot I_{ch}}\) &5963&-0,6531&321,4&0,03168\\
+	\bottomrule
+\end{tblr}
+\end{table}
+
+%% even more advanced longtable
+\begin{longtblr}[
+	caption = {Notwendige Parameter zur Simulation von Alterungseffekten des \texttt{generic} \texttt{battery} \texttt{model}. \cite{MathWorks.2008}},
+	entry = {Batteriealterungsparameter},
+	label = {tblr:batAgingPara},
+	]{
+		colspec = X[l]X[l],
+		rowhead = 1,      
+	}
+	\toprule
+	\SetCell[]{c}Parameter &  \SetCell[]{c}Erklärung \\
+	\midrule
+	Initial battery age & Equivalent full cycles. Ein Zyklus ist definiert als eine komplette entladung zu 100\%~\ac{dod} und Aufladung zu 100\%~\ac{soc} bei Normaltemperatur, Normalentlade- und Normalladestrom. \\*
+	Aging model sampling time & Simulationsschrittweite in Sekunde (default \SI{1e6}{\second})\\
+	\midrule
+	Ambient temperature Ta1 (deg. C) & 
+	Erste Umgebungstemperatur, Ta1 während der Alterungstests in \si{\degreeCelsius}\\*
+	Capacity at EOL (End Of Life) (Ah) & 	
+	Maximale Kapazität am \ac{eol} bei Umgebungstemperatur Ta1, in \si{\ampere\hour}.\\
+	Internal resistance at EOL (Ohms)& 
+	Innenwiderstand am \ac{eol} bei Umgebungstemperatur Ta1, in \si{\ohm}.\\
+	Charge current (nominal, maximum) [Ic~(A), Icmax~(A)] & 
+	Nominal und maximal Ladestrom, in \si{\ampere}. Aus der Initialisierung \\
+	Discharge current (nominal, maximum) [Id~(A), Idmax~(A)] & 
+	Nominal und maximal Enladestrom in \si{\ampere}. Aus der Initialisierung\\
+	Cycle life at 100\% DOD, Ic and Id (Cycles) & 
+	Anzahl an Zyklen bei 100\% \ac{dod}, nominal Lade- und Entladestrom, und bei der ersten Umgebungstemperatur, Ta1.\\
+	Cycle life at 25\% DOD, Ic and Id (Cycles) &
+	Anzahl an Zyklen bei \emph{25\% \ac{dod}}, nominal Lade- und Entladestrom, und bei der ersten Umgebungstemperatur, Ta1.\\
+	Cycle life at 100\% DOD, Ic and Idmax (Cycles) & 
+	Anzahl an Zyklen bei 100\% \ac{dod}, nominal Lade- und \emph{maximal Entladestrom}, und bei der ersten Umgebungstemperatur, Ta1.\\*
+	Cycle life at 100\% DOD, Icmax and Id (Cycles) &
+	Anzahl an Zyklen bei 100\% \ac{dod}, \emph{maximal Lade-} und nominal Entladestrom, und bei der ersten Umgebungstemperatur, Ta1.\\
+	\midrule
+	Ambient temperature Ta2 (deg. C) & 
+	Zweite Umgebungstemperatur, Ta1 während der Alterungstests in \si{\degreeCelsius}\\*
+	Cycle life at 100\% DOD, Ic and Id (Cycles) &
+	Anzahl an Zyklen bei 100\% \ac{dod}, nominal Lade- und Entladestrom, und bei der \emph{zweiten Umgebungstemperatur, Ta2}.\\
+	\bottomrule
+\end{longtblr}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

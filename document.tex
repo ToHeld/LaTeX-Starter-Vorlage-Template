@@ -17,8 +17,8 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{float}
 \usepackage{placeins}%% Ergmöglich \FloatBarrier
-\usepackage[labelfont=bf]{caption}
-\captionsetup[table]{justification=raggedright,singlelinecheck=false}
+\usepackage[labelfont=bf, figurename= Abb., tablename=Tab.]{caption} %Naming is optional
+\captionsetup[table]{justification=justified,singlelinecheck=false}
 
 %% citation
 \usepackage{url}  %% For citing webpages
@@ -32,12 +32,14 @@ hyperref=true, %% hyperref-Paket verwenden, um Links zu erstellen
 ]{biblatex}
 \addbibresource{kapitel/x_literaturverzeichnis.bib}
 \usepackage{acronym}
-\usepackage{tabularx}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs} 
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{hhline}
 \usepackage{subcaption}
 \usepackage{multicol} % Multi Columns für enumerations
+%\usepackage{showframe} %% Debuging Helpfull
 %%%%%%%%%%%%%%%%%% Document Style
 \hfuzz=2pt %% Warnung für Bad Box erst ab 2pt
 \usepackage{lmodern}		%% Spezial Font
@@ -72,6 +74,7 @@ pdfauthor={\Author}, %
 pdfkeywords={\Keywords}}
 
 \begin{document}
+	\pagenumbering{gobble} 
 	\input{kapitel/x_titelseite.tex}
 	\input{kapitel/x_erklaerung.tex}
 	\pagenumbering{Roman}
