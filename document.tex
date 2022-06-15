@@ -1,5 +1,5 @@
 \documentclass[11pt,a4paper]{scrreprt}
-\pdfminorversion=7
+%\pdfminorversion=7
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
 \usepackage{scrhack}
@@ -15,6 +15,7 @@
 \usepackage[colorinlistoftodos]{todonotes} % make notes in doc e.g. \todo{Make a cake \ldots}, \missingfigure
 \usepackage{epstopdf}
 \usepackage[hidelinks]{hyperref}
+\usepackage[numbered]{bookmark} %% Numbers in PDF table of contens
 \usepackage{float}
 \usepackage{placeins}%% Ergmöglich \FloatBarrier
 \usepackage[labelfont=bf, figurename= Abb., tablename=Tab.]{caption} %Naming is optional
@@ -79,8 +80,15 @@ pdfkeywords={\Keywords}}
 	\input{kapitel/x_erklaerung.tex}
 	\pagenumbering{Roman}
 	\tableofcontents
-	\listoffigures		%% Abbildungsverzeichnis || List of Figures
-	\listoftables
+	\clearpage
+	\listoffigures%% Abbildungsverzeichnis || List of Figures
+	\addcontentsline{toc}{chapter}{\listfigurename}
+	\clearpage %\cleardoublepage %for openright
+	\listoftables 
+	\addcontentsline{toc}{chapter}{\listtablename}
+	\clearpage %\cleardoublepage %for openright
+	\addcontentsline{toc}{chapter}{Todo List}
+	\listoftodos[Meine Todo list]\todo{Liste vor Druck abarbeiten und löschen}
 	\input{kapitel/Acronym.tex}
 	\newpage
 	\pagenumbering{arabic}
@@ -100,9 +108,8 @@ pdfkeywords={\Keywords}}
 	
 	
 	\newpage
-	\addcontentsline{toc}{chapter}{Anhang}
 	\appendix
-	\pagenumbering{gobble}
+	%\pagenumbering{gobble}
 	\input{kapitel/Anhang.tex}
 	
 	
